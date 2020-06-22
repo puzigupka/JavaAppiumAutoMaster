@@ -264,9 +264,11 @@ public class FirstTest
                 "Cannot find input to set name of articles folder",
                 5
         );
+        String name_of_folder = "Learning programming";
+
         waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/text_input"),
-                "Learning programming",
+                name_of_folder,
                 "Cannot put text into articles folder input",
                 5
         );
@@ -279,7 +281,7 @@ public class FirstTest
         waitForElementAndClick(
                 By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
                 "Cannot close article,cannot find X link",
-                10
+                20
         );
 
         waitForElementAndClick(
@@ -294,11 +296,10 @@ public class FirstTest
         );
 
         waitForElementAndClick(
-                By.xpath("//*@text='Java (programming language)']"),
+                By.xpath("//android.widget.TextView[@text='" + name_of_folder + "']"),
                 "Cannot find created folder",
                 5
         );
-
 
         swipeUpElementToLeft(
                 By.xpath("//*@text='Java (programming language)']"),
@@ -308,7 +309,8 @@ public class FirstTest
 
         waitForElementPresent(
                 By.xpath("//*@text='Java (programming language)']"),
-                "Cannot delete saved article"
+                "Cannot delete saved article",
+                5
         );
     }
 
@@ -406,7 +408,7 @@ public class FirstTest
         WebElement element = waitForElementPresent(
                 by,
                 error_message,
-                10);
+                15);
 
         int left_x = element.getLocation().getX();
         int right_x = left_x + element.getSize().getWidth();
@@ -417,7 +419,7 @@ public class FirstTest
         TouchAction action = new TouchAction(driver);
         action
                 .press(right_x, middle_y)
-                .waitAction(300)
+                .waitAction(400)
                 .moveTo(left_x, middle_y)
                 .release()
                 .perform();
