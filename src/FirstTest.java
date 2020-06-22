@@ -40,58 +40,58 @@ public class FirstTest {
         driver.quit();
     }
 
-    /*  @Test
-       public void firstTest()
-        {
-            waitForElementAndClick(
-                    By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                    "Cannot find 'Search Wikipedia' input",
-                    5
-            );
-            waitForElementAndSendKeys(
-                    By.xpath("//*[contains(@text,'Search…')]"),
-                    "Java",
-                    "Cannot find search input",
-                    15
-            );
-            waitForElementPresent(
-                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                    "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
-                    15
-            );
-
-        }
-
-        @Test
-        public void testCancelSearch()
-        {
-            waitForElementAndClick(
-                    By.id("org.wikipedia:id/search_container"),
-                    "Cannot find 'Search Wikipedia' input",
-                    5
-            );
-            waitForElementAndSendKeys(
-                    By.xpath("//*[contains(@text,'Search…')]"),
-                    "Java",
-                    "Cannot find search input",
-                    5
-            );
-            waitForElementAndClear(
-                    By.id("org.wikipedia:id/search_src_text"),
-                    "Cannot find search field",
-                    5
-            );
-            waitForElementAndClick(
-                    By.id("org.wikipedia:id/search_close_btn"),
-                    "Cannot find X to cancel search",
-                    5
-            );
-            waitForElementNotPresent(
-                    By.id("org.wikipedia:id/search_close_btn"),
-                    "X is still present on the page",
-                    5
-            );
-        }*/
+//      @Test
+//       public void firstTest()
+//        {
+//            waitForElementAndClick(
+//                    By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+//                    "Cannot find 'Search Wikipedia' input",
+//                    5
+//            );
+//            waitForElementAndSendKeys(
+//                    By.xpath("//*[contains(@text,'Search…')]"),
+//                    "Java",
+//                    "Cannot find search input",
+//                    15
+//            );
+//            waitForElementPresent(
+//                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+//                    "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+//                    15
+//            );
+//
+//        }
+//
+//        @Test
+//        public void testCancelSearch()
+//        {
+//            waitForElementAndClick(
+//                    By.id("org.wikipedia:id/search_container"),
+//                    "Cannot find 'Search Wikipedia' input",
+//                    5
+//            );
+//            waitForElementAndSendKeys(
+//                    By.xpath("//*[contains(@text,'Search…')]"),
+//                    "Java",
+//                    "Cannot find search input",
+//                    5
+//            );
+//            waitForElementAndClear(
+//                    By.id("org.wikipedia:id/search_src_text"),
+//                    "Cannot find search field",
+//                    5
+//            );
+//            waitForElementAndClick(
+//                    By.id("org.wikipedia:id/search_close_btn"),
+//                    "Cannot find X to cancel search",
+//                    5
+//            );
+//            waitForElementNotPresent(
+//                    By.id("org.wikipedia:id/search_close_btn"),
+//                    "X is still present on the page",
+//                    5
+//            );
+//        }
 //    @Test
 //    public void testCompareArticleTitle() {
 //        waitForElementAndClick(
@@ -123,26 +123,26 @@ public class FirstTest {
 //        );
 //    }
 
-  /*  @Test
-    public void testHomeWorkSearch()
-    {
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-        WebElement title_element = waitForElementPresent(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Cannot find article title",
-                15
-        );
-        String article_title = title_element.getAttribute("text");
-        Assert.assertEquals(
-                "We see unexpected title!",
-                "Search…",
-                article_title
-        );
-    }*/
+//    @Test
+//    public void testHomeWorkSearch()
+//    {
+//        waitForElementAndClick(
+//                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+//                "Cannot find 'Search Wikipedia' input",
+//                5
+//        );
+//        WebElement title_element = waitForElementPresent(
+//                By.id("org.wikipedia:id/search_src_text"),
+//                "Cannot find article title",
+//                15
+//        );
+//        String article_title = title_element.getAttribute("text");
+//        Assert.assertEquals(
+//                "We see unexpected title!",
+//                "Search…",
+//                article_title
+//        );
+//    }
 
 
     //
@@ -350,8 +350,6 @@ public class FirstTest {
                 "Cannot find article title",
                 15
         );
-
-
 
 
     }
