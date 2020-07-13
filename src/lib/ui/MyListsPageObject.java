@@ -1,13 +1,15 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.By;
+import lib.Platform;
+import org.openqa.selenium.WebElement;
 
-public class MyListsPageObject extends MainPageObject
+abstract public class MyListsPageObject extends MainPageObject
 {
-    public static final String
-    FOLDER_BY_NAME_TRL = "xpath://*[@text='{FOLDER_NAME}']",
-    ARTICLE_BY_TITLE_TPL = "xpath://*[@text='{TITLE}']";
+    protected static String
+    FOLDER_BY_NAME_TRL,
+    ARTICLE_BY_TITLE_TPL,
+    TITLE;
 
     private static String getFolderXpathByName(String name_of_folder)
     {
@@ -57,7 +59,32 @@ public class MyListsPageObject extends MainPageObject
                 "Cannot find saved article"
 
         );
+        if (Platform.getInstance().isIOS()){
+            this.clickElementToTheRightUpperCorner(article_xpath, "Cannot find saved article");
+        }
+
         this.waitForArticleToDisappearByTitle(article_title);
+    }
+
+    public WebElement waitForTitleElement()
+    {
+        return this.waitForElementPresent(TITLE, "Cannot find article title on page", 15);
+    }
+
+    public String getArticleTitle()
+    {
+        WebElement title_element = waitForTitleElement();
+        if (Platform.getInstance().isAndroid()) {
+            return title_element.getAttribute("text");
+        } else {
+            return title_element.getAttribute("name");
+        }
+    }
+
+    public void clickArticleByTitle(String article_title)
+    {
+        String article_xpath = getSaveArticleXpathByTitle(article_title);
+        this.waitForElementAndClick(article_xpath, "Cannot find and click article with title " + article_title, 10);
     }
 
 
