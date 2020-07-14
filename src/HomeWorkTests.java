@@ -71,17 +71,19 @@ public class HomeWorkTests extends CoreTestCase {
 
     }
 
-//
-//    @Test
-//    public void testAssertTitle(){
-//        SearchPageObject SearchPageObject = new SearchPageObject(driver);
-//
-//        SearchPageObject.initSearchInput();
-//        SearchPageObject.typeSearchLine("Apple");
-//        SearchPageObject.clickByArticleWithSubstring("Apple");
-//        String title = "Apple";
-////        SearchPageObject.assertTitle(String article_title);
-//    }
+    // Ex 6
+    @Test
+    public void testCheckArticleTitleEx6() {
+
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
+        String search_str = "java";
+
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine(search_str);
+        searchPageObject.clickForSearchResult("programming language");
+        articlePageObject.assertSubtitlePresent();
+    }
 
 
     @Test

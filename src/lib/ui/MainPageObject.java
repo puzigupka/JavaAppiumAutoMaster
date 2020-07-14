@@ -186,6 +186,15 @@ public class MainPageObject
         return elements.size();
     }
 
+    public void assertElementPresent(String locator, String errorMessage){
+        int amountOfElements = getAmountOfElements(locator);
+        if (amountOfElements == 0) {
+            String defaultMessage = "An element " + locator.toString() + " supposed to be present";
+            throw new AssertionError(defaultMessage + " " + errorMessage);
+
+        }
+    }
+
     public void assertElementNotPresent(String locator, String error_message)
     {
         int amount_of_elements = getAmountOfElements(locator);

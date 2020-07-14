@@ -15,6 +15,7 @@ public abstract class ArticlePageObject extends MainPageObject
                 MY_LIST_NAME_INPUT,
                 MY_LIST_OK_BUTTON,
                 CLOSE_ARTICLE_BUTTON,
+                ARTICLE_SUBTITLE,
                 CLOSE_BUTTON_FOR_SYNC_YOUR_SAVED_ARTICLES_POP_UP;
 
 
@@ -112,10 +113,9 @@ public abstract class ArticlePageObject extends MainPageObject
 
     }
 
-//    public boolean titleElementPresent()
-//    {
-//        return this.assertElementPresent(TITLE);
-//    }
+    public void assertSubtitlePresent(){
+        this.assertElementPresent(ARTICLE_SUBTITLE, "We don't found subtitle element");
+    }
 
     public void closeSyncYourSavedArticlesPopUp()
     {
